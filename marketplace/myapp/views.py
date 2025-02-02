@@ -16,3 +16,18 @@ def create_product(request):
             return redirect('index')
     product_form=ProductForm()
     return render(request,'myapp/create_product.html',{'product_form':product_form})
+def product_edit(request,id):
+    product=Product.objects.get(id=id)
+    product_form=ProductForm(request.POST or None,request.FILES or None,instance=product)
+    if request.method=='POST':
+        if product_form.is_valid():
+            product_form.save()
+            return redirect('index')
+    
+    return render(request,'myapp/product_edit.html',{'product_form':product_form ,'product':product})
+def delete_product(request,id):
+    product=Product.objects.get(id=id)
+    if request.method=='POST':
+        product.delete()
+        return redirect('index')
+    return render(request,'myapp/delete.html',{'product':product})
