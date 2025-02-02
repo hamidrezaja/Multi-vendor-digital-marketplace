@@ -1,0 +1,20 @@
+{% extends 'myapp/base.html' %}
+{% block body %}
+<div class="flex p-10 space-x-10 bg-gray-50 rounded-lg shadow-lg">
+    <!-- محتوای محصول -->
+    <div class="flex flex-col justify-between h-full w-1/2">
+        <div class="text-4xl font-semibold mb-4 text-gray-800">{{product.name}}</div>
+        <div class="mb-6 text-gray-600">{{product.description}}</div>
+        <div class="mb-6 text-green-700 font-bold text-xl">{{product.price}} تومان</div>
+        <div class="mt-auto">
+            <button id="checkout-button" class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-600 transition">خرید</button>
+        </div>
+    </div>
+
+    <!-- تصویر محصول -->
+    <div class="w-1/2">
+        <img class=" h-100 rounded-lg shadow-md " src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png" alt="Product Image">
+    </div>
+</div>
+
+{% endblock %}
