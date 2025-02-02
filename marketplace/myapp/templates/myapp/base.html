@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,22 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <nav class="shadow-lg ">
+        <div class="flex flex-wrap justify-between items-center mx-auto px-4 py-2.5">
+            <a href="" class="flex item-center">
+                <img class="h-9 mr-3" src="{% static 'myapp/images/logo.png' %}" >
+                <span class="self-center text-xml font-semibold">فروشگاه آنلاین</span>
+            </a>
+            <div class="flex item-center">
+                <a href="" class="mr-6 text-sm font-medium text-gray-5">داشبورد </a>
+                <a href="" class="mr-6 text-sm font-medium text-gray-5">فروش ها</a>
+                <a href="" class="mr-6 text-sm font-medium text-gray-5">سفارشات </a>
+                <a href="" class="mr-6 text-sm font-medium text-gray-5">افزودن محصول </a>
+                <a href="" class="mr-6 text-sm font-medium text-gray-5">خرید های من</a>
+                <a href="" class="mr-6 text-sm font-medium text-gray-5">خروج</a>
+            </div>
+        </div>
+    </nav>
     {% block body %}
     {% endblock %}
 </body>
