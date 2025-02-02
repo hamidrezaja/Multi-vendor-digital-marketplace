@@ -1,0 +1,35 @@
+{% extends 'myapp/base.html' %}
+{% block body %}
+<div class="flex flex-col justify-center items-center min-h-screen">
+    <h1 class="font-bold text-lg">🔐 ثبت نام </h1>
+     <form class="shadow-lg p-10" method="POST">
+        {% csrf_token %}
+        <div class="mb-2">
+            <label >نام کاربری</label>
+            <div class="border rounded py-2 px-2 mr-10">
+                {{ user_form.username }}
+            </div>
+        </div>
+        <div class="mb-2">
+            <label >ایمیل</label>
+            <div class="border rounded py-2 px-2 mr-10">
+                {{ user_form.email }}
+            </div>
+        </div>
+        <div class="mb-2">
+            <label >رمزعبور</label>
+            <div class="border rounded py-2 px-2 mr-10">
+                {{ user_form.password }}
+            </div>
+        </div>
+        <div class="mb-2">
+            <label >تأیید رمز عبور</label>
+            <div class="border rounded py-2 px-2 mr-10">
+                {{ user_form.password2 }}
+            </div>
+        </div>
+        <button class="bg-green-500 text-white px-4 py-2" type="submit">ثبت نام </button>
+    </form>
+     <p class="m-10">قبلاً ثبت‌نام کرده‌اید؟ <span> <a class="text-indigo-500" href="">اینجا کلیک کنید</a> تا وارد شوید.</p></span>
+</div>
+{% endblock%}
