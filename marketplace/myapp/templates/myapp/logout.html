@@ -1,0 +1,8 @@
+{% extends 'myapp/base.html' %} 
+{% block body %}
+<div class="flex flex-col justify-center items-center min-h-screen">
+    <h1 class="font-bold text-lg">شما از حساب کاربری خود خارج شدید.</h1>
+     <p><span><a class="text-indigo-500" href="{% url 'login' %}">اینجا کلیک کنید.</a>برای ورود </span></p>
+</div>
+   
+{% endblock %}

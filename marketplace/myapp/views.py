@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Product
 from .forms import ProductForm,UserRegistrationForm
+from django.contrib.auth import logout
 # Create your views here.
 def index(request):
     products=Product.objects.all()
@@ -43,3 +44,6 @@ def register(request):
         return redirect('index')
     user_form=UserRegistrationForm()
     return render(request,'myapp/register.html',{'user_form':user_form})
+def user_logout(request):
+    logout(request)
+    return render(request,'myapp/logout.html')
